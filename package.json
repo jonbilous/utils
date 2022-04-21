@@ -1,18 +1,18 @@
 {
-  "name": "@jonbilous/ts-npm-starter",
-  "version": "1.15.0",
+  "name": "@jonbilous/utils",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "vitest",
-    "test:ci": "vitest run",
+    "test:ci": "vitest run --passWithNoTests",
     "build": "tsc",
     "commit": "cz"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonbilous/ts-npm-starter"
+    "url": "https://github.com/jonbilous/utils"
   },
   "author": "Jon Bilous",
   "license": "ISC",
@@ -65,5 +65,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "peerDependencies": {
+    "@upstash/redis": "*"
   }
 }

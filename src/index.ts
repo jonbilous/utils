@@ -1,3 +1,3 @@
-export const hello = () => {
-  return "Hello world";
-};
+import * as cache from "./cache";
+
+export { cache };

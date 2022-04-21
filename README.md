@@ -1,4 +1,4 @@
-# ts-npm-starter
+# utils
 
 - Vitest for unit testing
 - Conventional commits and changelog generation
@@ -8,6 +8,6 @@
 ## Usage
 
 ```bash
-git clone git@github.com:jonbilous/ts-npm-starter.git
+git clone git@github.com:jonbilous/utils.git
 npm ci
 ```
