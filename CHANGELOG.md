@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/jonbilous/utils/compare/v1.1.0...v1.1.1) (2022-04-24)
+
+
+### Bug Fixes
+
+* **withcache:** withCache should not return promise ([918239b](https://github.com/jonbilous/utils/commit/918239b38eea9959b201a58f2a7a0e954d178a00))
+
 # [1.1.0](https://github.com/jonbilous/utils/compare/v1.0.1...v1.1.0) (2022-04-24)
 
 
