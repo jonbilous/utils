@@ -12,7 +12,7 @@ export const createCache = (
   },
   defaultTtl: number
 ) => {
-  const withCache = async <Return, ArgType, Args extends ArgType[]>(
+  const withCache = <Return, ArgType, Args extends ArgType[]>(
     keyFn: (...args: Args) => string | string[],
     fn: (...args: Args) => Promise<Return>,
     ttl?: number
