@@ -1,19 +1,23 @@
 import { Redis, RedisConfigNodejs } from "@upstash/redis";
 
-export const createCache = <T>(
+export const createCache = (
   cache: {
-    get: (key: string) => Promise<T>;
-    write: (key: string, data: T, ttl: number) => Promise<void>;
+    get: <T extends unknown>(key: string) => Promise<T>;
+    write: <T extends unknown>(
+      key: string,
+      data: T,
+      ttl: number
+    ) => Promise<void>;
     flush: (key: string) => Promise<any>;
   },
   defaultTtl: number
 ) => {
-  const withCache = async (
+  const withCache = async <Return>(
     key: string,
-    fn: () => Promise<T>,
+    fn: () => Promise<Return>,
     ttl?: number
-  ): Promise<T> => {
-    const cachedValue = await cache.get(key).catch((err) => null);
+  ): Promise<Return> => {
+    const cachedValue = await cache.get<Return>(key).catch((err) => null);
 
     if (cachedValue) {
       return cachedValue;
