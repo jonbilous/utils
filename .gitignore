@@ -1,7 +1,3 @@
-# Originally contributed from andrew-w-ross (issue #1)
-# The following .gitignore is useful in cases where you want to
-# commit libraries following this structure without generated dist files.
-
 /*
 !README.md
 !CHANGELOG.md
