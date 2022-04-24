@@ -12,22 +12,29 @@ export const createCache = (
   },
   defaultTtl: number
 ) => {
-  const withCache = async <Return>(
-    key: string,
-    fn: () => Promise<Return>,
+  const withCache = async <Return, ArgType, Args extends ArgType[]>(
+    keyFn: (...args: Args) => string | string[],
+    fn: (...args: Args) => Promise<Return>,
     ttl?: number
-  ): Promise<Return> => {
-    const cachedValue = await cache.get<Return>(key).catch((err) => null);
+  ) => {
+    return async (...args: Args): Promise<Return> => {
+      const keyResult = keyFn(...args);
 
-    if (cachedValue) {
-      return cachedValue;
-    }
+      const key =
+        typeof keyResult === "string" ? keyResult : keyResult.join("-");
 
-    const result = await fn();
+      const cachedValue = await cache.get<Return>(key).catch((err) => null);
 
-    cache.write(key, result, ttl ?? defaultTtl);
+      if (cachedValue) {
+        return cachedValue;
+      }
 
-    return result;
+      const result = await fn(...args);
+
+      cache.write(key, result, ttl ?? defaultTtl);
+
+      return result;
+    };
   };
 
   return { withCache, ...cache };
