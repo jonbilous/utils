@@ -2,8 +2,8 @@
   "name": "@jonbilous/utils",
   "version": "1.1.1",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "vitest",
     "test:ci": "vitest run --passWithNoTests",
@@ -70,6 +70,7 @@
     }
   },
   "peerDependencies": {
-    "@upstash/redis": "*"
+    "@upstash/redis": "*",
+    "next": "^12.1.5"
   }
 }
