@@ -1,4 +1,5 @@
 import { Redis, RedisConfigNodejs } from "@upstash/redis";
+import superjson from "superjson";
 
 export const createCache = (
   cache: {
@@ -48,15 +49,16 @@ export const createUpstashRedisCache = (
 
   const cache = createCache(
     {
-      get: (key) =>
+      get: <T>(key: string): Promise<T> =>
         redis.get(key).then((res) => {
           if (typeof res === "string") {
-            return JSON.parse(res);
+            return superjson.parse<T>(res) as T;
           }
-          return res;
+          return res as T;
         }),
       write: async (key, data, ttl) => {
-        await redis.append(key, JSON.stringify(data));
+        const serialized = superjson.stringify(data);
+        await redis.set(key, serialized);
         await redis.expire(key, ttl);
       },
       flush: (key) => redis.expire(key, 0),

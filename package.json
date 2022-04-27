@@ -72,5 +72,8 @@
   "peerDependencies": {
     "@upstash/redis": "*",
     "next": "^12.1.5"
+  },
+  "dependencies": {
+    "superjson": "^1.9.0"
   }
 }
