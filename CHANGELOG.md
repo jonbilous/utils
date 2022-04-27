@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/jonbilous/utils/compare/v1.2.0...v1.3.0) (2022-04-27)
+
+
+### Features
+
+* **upstash provider:** use superjson for serializing and parsing ([2c0b0d4](https://github.com/jonbilous/utils/commit/2c0b0d411a00d464261b17fd0a7fc54f927285a8))
+
 # [1.2.0](https://github.com/jonbilous/utils/compare/v1.1.1...v1.2.0) (2022-04-24)
 
 
