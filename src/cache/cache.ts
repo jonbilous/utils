@@ -1,5 +1,6 @@
 import { Redis, RedisConfigNodejs } from "@upstash/redis";
 import superjson from "superjson";
+import { SuperJSONResult } from "superjson/dist/types";
 
 export const createCache = (
   cache: {
@@ -7,9 +8,10 @@ export const createCache = (
     write: <T extends unknown>(
       key: string,
       data: T,
-      ttl: number
+      ttl?: number
     ) => Promise<void>;
     flush: (key: string) => Promise<any>;
+    flushAll: () => Promise<any>;
   },
   defaultTtl: number
 ) => {
@@ -45,20 +47,25 @@ export const createUpstashRedisCache = (
   config: RedisConfigNodejs,
   defaultTtl: number
 ) => {
-  const redis = new Redis(config);
+  const redis = new Redis({ ...config });
 
   const cache = createCache(
     {
       get: <T>(key: string): Promise<T> =>
         redis.get(key).then((res) => {
-          return superjson.parse(res as string) as T;
+          try {
+            return superjson.deserialize(res as SuperJSONResult) as T;
+          } catch (err) {
+            return null as any as T;
+          }
         }),
       write: async (key, data, ttl) => {
-        const serialized = superjson.stringify(data);
-        await redis.set(key, serialized);
-        await redis.expire(key, ttl);
+        const serialized = superjson.serialize(data);
+        await redis.set(key, serialized, {});
+        await redis.expire(key, ttl ?? defaultTtl);
       },
       flush: (key) => redis.expire(key, 0),
+      flushAll: () => redis.flushall({ async: true }),
     },
     defaultTtl
   );
