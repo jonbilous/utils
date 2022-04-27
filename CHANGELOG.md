@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/jonbilous/utils/compare/v1.3.1...v1.3.2) (2022-04-27)
+
+
+### Bug Fixes
+
+* **upstash:** fix superjson behavior ([e2578e7](https://github.com/jonbilous/utils/commit/e2578e74c9cee0581b262c6b01d5b16c29c1456d))
+
 ## [1.3.1](https://github.com/jonbilous/utils/compare/v1.3.0...v1.3.1) (2022-04-27)
 
 
