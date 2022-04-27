@@ -51,10 +51,7 @@ export const createUpstashRedisCache = (
     {
       get: <T>(key: string): Promise<T> =>
         redis.get(key).then((res) => {
-          if (typeof res === "string") {
-            return superjson.parse<T>(res) as T;
-          }
-          return res as T;
+          return superjson.parse(res as string) as T;
         }),
       write: async (key, data, ttl) => {
         const serialized = superjson.stringify(data);
