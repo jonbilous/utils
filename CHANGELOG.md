@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/jonbilous/utils/compare/v1.3.2...v1.4.0) (2022-04-28)
+
+
+### Features
+
+* **uselocalstoragestate:** add useLocalStorageState hook ([797ef73](https://github.com/jonbilous/utils/commit/797ef73c936f274357d6b0d5f7d1b9fea8065f4b))
+
 ## [1.3.2](https://github.com/jonbilous/utils/compare/v1.3.1...v1.3.2) (2022-04-27)
 
 
