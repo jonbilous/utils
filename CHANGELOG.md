@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/jonbilous/utils/compare/v1.4.0...v1.4.1) (2022-04-28)
+
+
+### Bug Fixes
+
+* **uselocalstoragestate:** export uselocalstoragestate ([4efbbf0](https://github.com/jonbilous/utils/commit/4efbbf0dd9e9295154dc928c0c0f702650b1fa80))
+
 # [1.4.0](https://github.com/jonbilous/utils/compare/v1.3.2...v1.4.0) (2022-04-28)
 
 
