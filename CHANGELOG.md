@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/jonbilous/utils/compare/v1.4.2...v1.4.3) (2022-04-29)
+
+
+### Bug Fixes
+
+* **uselocalstoragestate:** don't remove keys from localstorage if value if falsy ([62549fb](https://github.com/jonbilous/utils/commit/62549fbbaead93c001009d97779f3db7eee25214))
+
 ## [1.4.2](https://github.com/jonbilous/utils/compare/v1.4.1...v1.4.2) (2022-04-29)
 
 
