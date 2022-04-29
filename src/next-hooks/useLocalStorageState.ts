@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const resolveInitialValue = <T>(fallback: T, key: string): T => {
   const value = localStorage.getItem(key);
@@ -7,7 +7,7 @@ const resolveInitialValue = <T>(fallback: T, key: string): T => {
 };
 
 export default <T>(fallback: T, key: string) => {
-  const [value, setState] = useState<T>(resolveInitialValue<T>(fallback, key));
+  const [value, setState] = useState<T>(fallback);
 
   const setValue = (value: T) => {
     setState(value);
@@ -18,6 +18,10 @@ export default <T>(fallback: T, key: string) => {
       localStorage.removeItem(key);
     }
   };
+
+  useEffect(() => {
+    resolveInitialValue<T>(fallback, key);
+  }, [fallback, key]);
 
   return [value, setValue] as const;
 };
