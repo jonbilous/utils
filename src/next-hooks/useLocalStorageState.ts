@@ -11,16 +11,12 @@ export default <T>(fallback: T, key: string) => {
 
   const setValue = (value: T) => {
     setState(value);
-
-    if (value) {
-      localStorage.setItem(key, JSON.stringify(value));
-    } else {
-      localStorage.removeItem(key);
-    }
+    localStorage.setItem(key, JSON.stringify(value));
   };
 
   useEffect(() => {
-    resolveInitialValue<T>(fallback, key);
+    const initalValue = resolveInitialValue<T>(fallback, key);
+    setState(initalValue);
   }, [fallback, key]);
 
   return [value, setValue] as const;
