@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/jonbilous/utils/compare/v1.4.1...v1.4.2) (2022-04-29)
+
+
+### Bug Fixes
+
+* **uselocalstoragestate:** get local storage value in useEffect ([ea416c5](https://github.com/jonbilous/utils/commit/ea416c53f0828d3b5d7923233416276325564f23))
+
 ## [1.4.1](https://github.com/jonbilous/utils/compare/v1.4.0...v1.4.1) (2022-04-28)
 
 
