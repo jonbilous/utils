@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/jonbilous/utils/compare/v1.4.3...v1.5.0) (2022-05-05)
+
+
+### Features
+
+* **loading utils:** adds loading utilities ([0be27ce](https://github.com/jonbilous/utils/commit/0be27ce1d3e4e7ec777c74055048f5dbf09f79c5))
+
 ## [1.4.3](https://github.com/jonbilous/utils/compare/v1.4.2...v1.4.3) (2022-04-29)
 
 
