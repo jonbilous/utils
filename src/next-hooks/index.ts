@@ -1,5 +1,5 @@
 import useIsLoading from "./useIsLoading";
-import useLocalStorageState from "./useLocalStorageState";
+import { useOnClickLoader } from "./useOnClickLoader";
 import usePagination from "./usePagination";
 import useQueryParams from "./useQueryParams";
 import useQueryParamState from "./useQueryParamState";
@@ -8,6 +8,6 @@ export {
   usePagination,
   useQueryParams,
   useQueryParamState,
-  useLocalStorageState,
   useIsLoading,
+  useOnClickLoader,
 };
