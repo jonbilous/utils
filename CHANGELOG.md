@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/jonbilous/utils/compare/v1.5.0...v1.6.0) (2022-05-05)
+
+
+### Features
+
+* **new utilities, re-organization:** added useSet and image utilities, moved some exports around ([5b37fe3](https://github.com/jonbilous/utils/commit/5b37fe3ceaa01313c57615d021a03fdc4c8ceab0))
+
 # [1.5.0](https://github.com/jonbilous/utils/compare/v1.4.3...v1.5.0) (2022-05-05)
 
 
