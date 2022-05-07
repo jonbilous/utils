@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/jonbilous/utils/compare/v1.6.0...v1.7.0) (2022-05-07)
+
+
+### Features
+
+* **new react hooks:** adds useEventListener, useKeydown, and useItemSelect ([98f4edd](https://github.com/jonbilous/utils/commit/98f4edd166f96740ff0cca47ffb67d27b4a62100))
+
 # [1.6.0](https://github.com/jonbilous/utils/compare/v1.5.0...v1.6.0) (2022-05-05)
 
 
