@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/jonbilous/utils/compare/v1.8.0...v1.9.0) (2022-12-25)
+
+
+### Features
+
+* adds namespace to cache ([35853ec](https://github.com/jonbilous/utils/commit/35853ec71ea0b47bb14194378a3795e90e2ad84a))
+
 # [1.8.0](https://github.com/jonbilous/utils/compare/v1.7.0...v1.8.0) (2022-05-07)
 
 
