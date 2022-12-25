@@ -45,14 +45,17 @@ export const createCache = (
 
 export const createUpstashRedisCache = (
   config: RedisConfigNodejs,
-  defaultTtl: number
+  defaultTtl: number,
+  namespace: string
 ) => {
   const redis = new Redis({ ...config });
+
+  const resolveKey = (key: string) => [namespace, key].join("-");
 
   const cache = createCache(
     {
       get: <T>(key: string): Promise<T> =>
-        redis.get(key).then((res) => {
+        redis.get(resolveKey(key)).then((res) => {
           try {
             return superjson.deserialize(res as SuperJSONResult) as T;
           } catch (err) {
@@ -61,11 +64,11 @@ export const createUpstashRedisCache = (
         }),
       write: async (key, data, ttl) => {
         const serialized = superjson.serialize(data);
-        await redis.set(key, serialized, {});
-        await redis.expire(key, ttl ?? defaultTtl);
+        await redis.set(resolveKey(key), serialized, {});
+        await redis.expire(resolveKey(key), ttl ?? defaultTtl);
       },
-      flush: (key) => redis.expire(key, 0),
-      flushAll: () => redis.flushall({ async: true }),
+      flush: (key) => redis.expire(resolveKey(key), 0),
+      flushAll: () => redis.flushall({ async: false }),
     },
     defaultTtl
   );
