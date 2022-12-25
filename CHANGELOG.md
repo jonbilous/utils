@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/jonbilous/utils/compare/v1.7.0...v1.8.0) (2022-05-07)
+
+
+### Features
+
+* **useplacesautocomplete:** adds usePlacesAutocomplete hook ([63dbd11](https://github.com/jonbilous/utils/commit/63dbd11051ce025917a2bee93d9d54b8ba11b534))
+
 # [1.7.0](https://github.com/jonbilous/utils/compare/v1.6.0...v1.7.0) (2022-05-07)
 
 
